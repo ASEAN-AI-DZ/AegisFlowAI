@@ -2,25 +2,23 @@
 
 <div align="center">
   <a href="https://aegis-flow-ai.vercel.app/">
-    <img src="https://img.shields.io/badge/🚀_Website-CivicTwin-00C853?style=for-the-badge" alt="Demo System"/>
+    <img src="https://img.shields.io/badge/🚀_Website-AegisFlow-00C853?style=for-the-badge" alt="Demo System"/>
   </a>
-  <!-- <a href="https://nguyenthai11103.github.io/DTU-CivicTwin-documents/intro">
-    <img src="https://img.shields.io/badge/📚_Documentation-AegisFlow-1976D2?style=for-the-badge" alt="Documentation"/>
-  </a> -->
+
   <br/>
   
   <a href="LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"/>
+    <img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="License: GPL-3.0"/>
   </a>
   
   <br/>
   
-  <a href="CONTRIBUTING.md">🤝 Đóng Góp</a> •
-  <a href="CHANGELOG.md">📜 Changelog</a>
+  <a href="CONTRIBUTING.md">🤝 Đóng Góp</a> 
+  <!-- <a href="CHANGELOG.md">📜 Changelog</a> -->
 
 </div>
 
-![s](/static/banner.png)
+![s](/static/img/banner_aegisflowai.png)
 
 > _"Từ phản ứng thụ động sang dự báo chủ động — AI là lá chắn bảo vệ cộng đồng trước thiên tai"_
 
@@ -114,36 +112,32 @@ Khi một trận mưa lịch sử đổ xuống, hệ thống không chỉ hiể
 
 ## 📊 Các Đối tượng hướng đến
 
-![s](/static/img/doituong.png)
+![s](/static/img/doi_tuong.png)
 
-### 👨‍💼 1. Ban Chỉ đạo & Chính quyền địa phương
+### 👨‍💼 1. Nhà Quy hoạch & Quan chức Chính quyền
+- Dự báo tác động của các dự án hạ tầng trước khi triển khai
+- Mô phỏng kịch bản what-if để tối ưu hóa quyết định
+- Dashboard dữ liệu để ra quyết định nhanh, chính xác
 
-- Nắm bắt toàn cảnh tình hình ngập trên Dashboard điều hành tập trung
-- Đưa ra quyết định điều phối trạm bơm, phân bổ nguồn lực dựa trên ưu tiên (Triage)
-- Đánh giá khả năng thoát nước hạ tầng tương lai
+### 👷 2. Kỹ sư & Chuyên gia Giao thông Đô thị
+- Phân tích chi tiết lưu lượng giao thông và rủi ro
+- Mô phỏng hiệu quả của các biện pháp tương ứng
+- Tối ưu hóa hạ tầng giao thông
 
-### 👷 2. Lực lượng Cứu hộ Khẩn cấp (Y tế, Cảnh sát, Quân đội)
+### 🏛️ 3. Tổ chức Cộng đồng & NGO
+- Tất cả công dân có thể sử dụng công cụ để đề xuất dự án
+- Minh bạch hóa tác động kinh tế-xã hội-môi trường
 
-- Nhận lộ trình di chuyển ưu tiên, không bị chặn bởi nước sâu
-- Xác định tọa độ người dân cần cứu trợ khẩn cấp trên radar trực quan
-- Phối hợp đa lực lượng mượt mà trên cùng một bản đồ
-
-### 🏛️ 3. Người dân & Tổ chức Cộng đồng
-
-- Nhận cảnh báo sớm về tuyến đường đi làm/về nhà để tránh đi vào vùng nguy hiểm
-- Dễ dàng báo cáo (nhấn nút gửi tọa độ ngập) để AI cập nhật nhanh cho người khác
-- Tổ chức từ thiện biết chính xác nơi phân bổ áo phao, lương thực
-
-### 📚 4. Nhà nghiên cứu Môi trường & Đô thị
-
-- Truy xuất nguồn dữ liệu không gian mở để nghiên cứu biến đổi khí hậu
-- Phân tích rủi ro hạ tầng để cố vấn cho các dự án quy hoạch cấp thoát nước
+### 📚 4. Nhà Nghiên cứu & Sinh viên
+- Truy cập dữ liệu mở để nghiên cứu
+- Mô hình hóa các vấn đề đô thị phức tạp
+- Kiểm chứng giả thuyết trong môi trường an toàn
 
 ---
 
 ## 🚀 Chức năng Chính của AegisFlow AI
 
-![s](/static/img/chucnang.png)
+![s](/static/img/chuc_nang_chinh.png)
 
 ### 1. **Real-time Flood Radar (Bản đồ Cảnh báo Thời gian thực)**
 
@@ -171,13 +165,14 @@ Khi một trận mưa lịch sử đổ xuống, hệ thống không chỉ hiể
 
 ## 📚 Công nghệ Sử dụng
 
-| Thành phần | Công nghệ cụ thể | Vai trò trong hệ thống |
-|------------|-----------------|------------------------|
-| **Giao diện (Frontend)** | `Vue.js, Vite, Leaflet.js` | Hiển thị bản đồ tương tác định tuyến, vẽ các lớp dữ liệu phủ màu vùng ngập, vẽ vector đường đi luân chuyển. |
-| **Xử lý Logic (Backend)** | `Laravel 11 (PHP)` | Đóng vai trò trung tâm điều phối, Restful API chuẩn mực, xử lý logic xác thực người dùng và kết nối các thành phần với nhau. |
-| **Trí tuệ nhân tạo (AI)** | `Python, FastAPI, XGBoost` | Cung cấp Service AI độc lập chạy mô hình Machine Learning dự báo điểm rủi ro ngập và cung cấp dữ liệu không gian (GeoPandas). |
-| **Dữ liệu nền (Database)** | `PostgreSQL + PostGIS` | Lưu trữ dữ liệu hệ thống vật lý và truy vấn không gian phức tạp (tọa độ điểm ngập, khoanh vùng đa giác ngập, khoảng cách). |
-| **Kết nối (Real-time)** | `Laravel Reverb (WebSockets)` | Duy trì kết nối hai chiều liên tục, đảm bảo cảnh báo ngập mới nhất tự động "nhảy" lên radar người dùng mà không cần reload. |
+| Thành phần | Công nghệ |
+|----------|----------|
+| **Frontend** | Vite + vanilla JS + HTML5, Leaflet/Mapbox |
+| **Backend** | Node.js + Express.js |
+| **AI Core** | Amazon Bedrock + Amazon Nova |
+| **Visualization** | Charts.js, Leaflet/Mapbox |
+| **Database** | PostgreSQL + PostGIS (for geospatial data) |
+| **Advanced (R&D)** | 3D Gaussian Splatting, Agent-Based Modeling, Blockchain |
 
 ---
 
@@ -209,10 +204,9 @@ Dự án không chỉ xử lý vấn đề ngập lụt cấp bách của hôm n
 ## 📞 Liên hệ & Đóng góp
 
 ### Liên hệ Dự án
-
-- **Lead Team:** DTU_DZ_T2
-- **GitHub Repository:** [AegisFlowAI Repository](https://github.com/ASEAN-AI-DZ/AegisFlowAI)
-- **Tech Stack:** Laravel, Vue, Python FastAPI
+- **Lead Researcher:** [Contact Information]
+- **GitHub Repository:** [Repository Link]
+- **Documentation:** [Docs Link]
 
 ### Cách Đóng góp
 
