@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/🚀_Website-AegisFlow_AI-00C853?style=for-the-badge" alt="Demo System"/>
   </a>
    <a href="https://asean-ai-dz.github.io/AegisFlowDocument/">
-    <img src="https://img.shields.io/badge/📚_Documentation-CivicTwin-1976D2?style=for-the-badge" alt="Documentation"/>
+    <img src="https://img.shields.io/badge/📚_Documentation-AegisFlow Ai-1976D2?style=for-the-badge" alt="Documentation"/>
   </a>
   <br/>
  <a href="./License.md">
