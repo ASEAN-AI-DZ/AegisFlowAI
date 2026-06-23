@@ -1,232 +1,373 @@
-﻿# 🌊 AegisFlow AI — Nền tảng GIS & Map & AI cho Quản lý Đô thị Thông minh
+# 🌊 AegisFlow AI — GIS & AI Platform for Smart Urban Flood Management
 
 <div align="center">
   <a href="https://aegis-flow-ai.vercel.app/">
-    <img src="https://img.shields.io/badge/🚀_Website-AegisFlow_AI-00C853?style=for-the-badge" alt="Demo System"/>
+    <img src="https://img.shields.io/badge/🚀_Website-AegisFlow_AI-00C853?style=for-the-badge" alt="Website"/>
   </a>
-   <a href="https://asean-ai-dz.github.io/AegisFlowDocument/">
-    <img src="https://img.shields.io/badge/📚_Documentation-AegisFlow Ai-1976D2?style=for-the-badge" alt="Documentation"/>
+  <a href="https://asean-ai-dz.github.io/AegisFlowDocument/">
+    <img src="https://img.shields.io/badge/📚_Documentation-AegisFlow_AI-1976D2?style=for-the-badge" alt="Documentation"/>
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/🎥_Demo-AegisFlow_AI-EB907C?style=for-the-badge" alt="Demo"/>
+  </a>
+  <a href="https://canva.link/948o6uh6oyeqwu7">
+    <img src="https://img.shields.io/badge/📖_Slide-AegisFlow_AI-F024EC?style=for-the-badge" alt="Slide"/>
   </a>
   <br/>
- <a href="./License.md">
+
+  <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-GPL%203.0-blue.svg" alt="License: GPL-3.0"/>
   </a>
+
   <br/>
-  <!-- <a href="./CONTRIBUTING.md">🤝 Đóng Góp</a>  -->
-  <!-- <a href="CHANGELOG.md">📜 Changelog</a> -->
+
+  <a href="CONTRIBUTING.md">🤝 Contributing</a> •
+  <a href="CHANGELOG.md">📜 Changelog</a>
+
 </div>
 
-![s](/static/banner.png)
+![AegisFlow AI Banner](/static/banner.png)
 
-> _"Từ phản ứng thụ động sang dự báo chủ động — AI là lá chắn bảo vệ cộng đồng trước thiên tai"_
+> _"From damage reports to flood forecasts — AI becomes the digital shield that safeguards communities before disaster strikes."_
 
-**AegisFlow AI** là nền tảng tiên tiến tích hợp **Hệ thống Thông tin Địa lý (GIS)** và **AI (Trí tuệ Nhân tạo)**, được thiết kế để chuyển đổi cách quản lý và ứng phó với ngập lụt đô thị từ phản ứng sang dự đoán và chủ động. Hệ thống mô hình hóa toàn bộ mạng lưới ngập lụt dưới dạng đồ thị mạng động, tích hợp dữ liệu thời gian thực từ cảm biến mực nước, dữ liệu thời tiết và báo cáo của công dân để hỗ trợ sơ tán nhanh chóng, an toàn và phân bổ cứu trợ chuẩn xác.
-
----
-
-## 📋 Thực trạng đô thị
-
-### Bối cảnh
-
-Trong bối cảnh biến đổi khí hậu và đô thị hóa diễn ra nhanh chóng tại các thành phố lớn trên cả nước, hệ thống ứng phó thiên tai truyền thống đang đối mặt với nhiều thách thức nghiêm trọng.
-
-**Thực trạng:**
-
-- Mưa lớn cực đoan và triều cường gây ngập lụt diễn ra thường xuyên, làm tê liệt ngập lụt đô thị.
-- Các tuyến đường huyết mạch bị cắt đứt bất ngờ, gây nguy hiểm cho người dân và làm chậm trễ xe cấp cứu, cứu hỏa trong giờ khắc sinh tử.
-- Hầu hết các hệ thống hiện tại chỉ tập trung vào ghi nhận (monitoring) sự cố sau khi đã xảy ra, nhưng thiếu khả năng dự báo sớm (prediction) mức độ ngập và cảnh báo tuyến đường an toàn.
-- Phản ứng xử lý chậm, khó điều phối lực lượng cứu hộ tối ưu và thiếu công cụ hỗ trợ ra quyết định kịp thời cho Ban chỉ đạo phòng chống thiên tai.
+**AegisFlow AI** is a cutting-edge platform that fuses **Geographic Information Systems (GIS)** with **Artificial Intelligence (AI)** to fundamentally shift urban flood response from a reactive model to a **predictive and proactive** one. By modeling the city's entire road network as a dynamic weighted graph, the system continuously ingests data from water-level sensors, weather services, and crowdsourced citizen reports — enabling rapid evacuation planning, precise relief coordination, and data-driven decisions that save lives.
 
 ---
 
-## 🎯 Mục tiêu Dự án
+## 📋 The Challenge
 
-### Mục tiêu Ngắn hạn
+### Background
 
-1. **Xây dựng Bản đồ tương tác thời gian thực** cập nhật tình hình ngập lụt toàn đô thị
-2. **Triển khai AI dự báo sớm:**
-   - Điểm đen ngập lụt dựa trên dữ liệu địa hình, lịch sử mưa và trạm bơm
-   - Rủi ro môi trường dựa trên dữ liệu thời tiết + cảm biến IoT
-3. **Hỗ trợ định tuyến:** Cho phép tự động loại bỏ các tuyến đường ngập sâu và tìm kiếm đường vòng an toàn nhất trước khi người dân di chuyển
-4. **Dashboard hỗ trợ ra quyết định:** Cung cấp giao diện trực quan cho chính quyền trong việc điều chuyển nguồn lực cứu trợ
+As climate change intensifies and urbanization accelerates across major cities in the region, legacy flood response infrastructure is increasingly overwhelmed by a growing set of critical shortcomings.
 
-### Mục tiêu Dài hạn
+**What cities face today:**
 
-- Tích hợp sâu rộng vào hệ thống điều hành Smart City và Trung tâm phòng chống thiên tai quốc gia, trở thành nền tảng cốt lõi hỗ trợ vận hành trong mùa mưa bão.
-- Mở rộng phạm vi ứng dụng sang nhiều lĩnh vực dự báo thiên tai khác, bao gồm: cảnh báo sạt lở nền nhiệt, đánh giá rủi ro cơ sở hạ tầng, và quy hoạch đô thị bền vững với biến đổi khí hậu.
+- Intense downpours and rising tides trigger recurring urban floods that bring entire road networks to a standstill.
+- Key transit corridors get submerged without warning, putting lives at risk and blocking emergency vehicles when every minute counts.
+- The vast majority of existing tools are limited to post-event monitoring — they lack the ability to forecast flood severity or guide people to safe routes ahead of time.
+- Emergency response remains sluggish, with no systematic way to optimize rescue logistics or equip disaster authorities with real-time decision support.
 
 ---
 
-## 💡 Giải pháp – AegisFlow AI
+## 🎯 Project Goals
 
-**AegisFlow AI** là câu trả lời. Đây là một nền tảng toàn diện kết hợp **Dữ liệu Không gian (GIS & Map)** với **AI**, hoạt động như một **"lá chắn kỹ thuật số"** của thành phố trong thiên tai. Mỗi con đường, mỗi giao lộ đều được **đồng bộ hóa mức độ rủi ro thời gian thực**. Thông qua việc thấu hiểu "nhịp thở" của thời tiết và địa hình, chúng ta chuyển từ **báo cáo thiệt hại** sang **dự báo mức ngập** và **bảo vệ sinh mạng**.
+### Short-term Goals
 
----
+1. **Deploy a live interactive map** that tracks flood conditions across the city in real time.
+2. **Implement AI-driven forecasting for:**
+   - Identifying flood-prone hotspots using terrain profiles, historical rainfall patterns, and drainage infrastructure data.
+   - Assessing environmental hazards by correlating weather feeds with IoT sensor streams.
+3. **Enable intelligent routing:** Automatically blacklist submerged road segments and compute the safest alternative paths before citizens set out.
+4. **Provide a command-and-control dashboard:** Give authorities a clear, visual interface to allocate rescue teams and relief supplies efficiently.
 
-## 🔬 Hệ Thống Phân Tích & Dự Báo Động là gì?
+### Long-term Goals
 
-### Định nghĩa
-
-Khác với các hệ thống bản đồ tĩnh, **AegisFlow AI** vận hành một **Mô hình Trạng thái Động (Dynamic Spatial Model)**. Đây là một lớp dữ liệu sống phủ lên bản đồ vật lý của đô thị nhằm đánh giá mức độ tương tác giữa hạ tầng và lượng mưa.
-
-**Hệ thống này KHÔNG PHẢI:**
-
-- ❌ Một ứng dụng dự báo thời tiết chung chung
-- ❌ Bản tin cập nhật kẹt xe thông thường như Google Maps (thường vẫn gợi ý đường ngắn nhất dù đã ngập sâu)
-
-**Hệ thống dự báo động AegisFlow là:**
-
-- ✅ Một **mạng lưới liên kết**, được cập nhật liên tục điểm ngập theo thời gian thực
-- ✅ Tích hợp đa luồng dữ liệu: API thời tiết, cảm biến đo mực nước, Crowdsourcing từ người dân
-- ✅ **Phản ánh chính xác** tình trạng khả dụng của các tuyến đường
-- ✅ **Hai chiều:** Cộng đồng báo ngập → AI khoanh vùng rủi ro; AI tìm lộ trình → Cứu hộ tiếp cận hiện trường nhanh nhất
-
-### Khả năng cốt lõi
-
-1. **Cảnh báo:** Phóng chiếu các điểm có nguy cơ rủi ro cao trước nhiều giờ đồng hồ.
-2. **Dự báo:** Tính toán mức nước ngầm, lưu lượng dâng cục bộ.
-3. **Tối ưu hóa:** Tìm ra lộ trình sơ tán an toàn nhất, tránh xa các "rốn ngập".
-4. **Phân tích tập trung:** Gợi ý vị trí đặt trạm cứu trợ dựa trên mật độ dân cư bị cô lập.
+- Become a foundational component of Smart City operations centers and national disaster management agencies — the go-to platform during monsoon and storm seasons.
+- Broaden the system's reach into adjacent domains: landslide early warning, aging infrastructure risk scoring, and climate-resilient urban planning.
 
 ---
 
-## 🌐 AegisFlow AI Hoạt Động Ra Sao?
+## 🌐 Understanding AegisFlow AI
 
-### Khái niệm
+### The Core Idea
 
-Hãy tưởng tượng bạn đang dùng một ứng dụng như **Waze hay Google Maps**, nhưng **dành riêng cho việc sống sót qua thiên tai** – một hệ thống định tuyến cực kỳ nhạy bén với nước ngập.
+Picture a navigation app like **Waze or Google Maps** — except this one is **purpose-built to keep you alive during a flood**. It is a routing intelligence that reacts instantly to rising water.
 
-Với AegisFlow AI, toàn bộ mạng lưới ngập lụt được mô hình hóa dưới dạng **graph network** (Node = điểm giao cắt, Edge = đoạn đường). Trọng số của các "Edge" này thay đổi linh hoạt theo lượng mưa và cảm biến ngập.
+AegisFlow AI represents every street and intersection as a **graph network** (Nodes = junctions, Edges = road segments). Each Edge carries a dynamic weight that shifts in real time as rainfall data and water-level readings flow in.
 
-Khi một trận mưa lịch sử đổ xuống, hệ thống không chỉ hiển thị các điểm ngập hiện tại mà còn **ngay lập tức suy diễn không gian** cho **1-3 giờ tới**:
+The moment a severe storm event begins, the platform doesn't just show you where water has already accumulated — it **runs spatial projections for the next 1–3 hours** to answer urgent questions:
 
-- Nước ngập sẽ lan rộng chặn đứng những tuyến lộ chính nào?
-- Xe cứu thương, cứu hỏa nên đi tuyến đường vòng nào (không ngập) để đến bệnh viện nhanh nhất?
-- Những khu dân cư nào sắp bị cô lập hoàn toàn và cần ưu tiên thuyền cứu hộ sớm?
-- Giải pháp phân bổ nhu yếu phẩm khẩn cấp đến điểm nào là tối ưu nhất?
-
----
-
-## 👥 Các Đối tượng hướng đến
-
-![s](/static/img/doituong.png)
-
-### 👨‍💼 1. Nhà Quy hoạch & Quan chức Chính quyền
-
-- Dự báo tác động của các dự án hạ tầng trước khi triển khai
-- Mô phỏng kịch bản what-if để tối ưu hóa quyết định
-- Dashboard dữ liệu để ra quyết định nhanh, chính xác
-
-### 👷 2. Kỹ sư & Chuyên gia ngập lụt Đô thị
-
-- Phân tích chi tiết lưu lượng ngập lụt và rủi ro
-- Mô phỏng hiệu quả của các biện pháp tương ứng
-- Tối ưu hóa hạ tầng ngập lụt
-
-### 🏛️ 3. Tổ chức Cộng đồng & NGO
-
-- Tất cả công dân có thể sử dụng công cụ để đề xuất dự án
-- Minh bạch hóa tác động kinh tế-xã hội-môi trường
-
-### 📚 4. Nhà Nghiên cứu & Sinh viên
-
-- Truy cập dữ liệu mở để nghiên cứu
-- Mô hình hóa các vấn đề đô thị phức tạp
-- Kiểm chứng giả thuyết trong môi trường an toàn
+- Which arterial roads will floodwater encroach upon and render impassable?
+- What is the fastest unobstructed route for an ambulance or fire engine to reach the nearest hospital?
+- Which neighborhoods are at imminent risk of isolation and should receive rescue boats first?
+- Where should emergency supply hubs be staged for maximum coverage?
 
 ---
 
-## 🚀 Chức năng Chính của AegisFlow AI
+## 👥 Who Is This For?
 
-![s](/static/img/chucnang.png)
+![Target Audience](/static/img/doituong.png)
 
-### 1. **Real-time Flood Radar (Bản đồ Cảnh báo Thời gian thực)**
+### 👨‍💼 1. City Planners & Government Decision-Makers
 
-- Mô hình hóa tọa độ điểm ngập lập tức lên đồ thị bản đồ gốc
-- Cập nhật liên tục từ dữ liệu người dùng (Crowdsourcing) và cảm biến IoT
-- Hiển thị mức độ ngập và màu sắc cảnh báo theo từng cụm khu vực
+- Evaluate the downstream effects of infrastructure investments before breaking ground.
+- Test what-if scenarios with simulation tools to de-risk major decisions.
+- Leverage live data dashboards for timely, evidence-based governance.
 
-### 2. **AI Dự báo Rủi ro Rút/Ngập**
+### 👷 2. Flood Engineers & Urban Infrastructure Experts
 
-- **Dự báo vùng có rủi ro ngập** trong tương lai gần qua thuật toán Machine Learning
-- Phân tích tương quan giữa dữ liệu API thời tiết (Weather) và địa hình trũng thấp
+- Conduct granular flood-flow analysis and multi-variable risk assessments.
+- Model the projected outcomes of drainage upgrades or barrier placements.
+- Continuously refine flood mitigation infrastructure with empirical feedback.
 
-### 3. **Dashboard Hỗ trợ Quyết định Cứu trợ**
+### 🏛️ 3. Civil Society & Community Organizations
 
-- **Vulnerability Score:** Chấm điểm ưu tiên cứu trợ khu vực (vùng có người già/bệnh viện ngập sâu được điểm ưu tiên cao)
-- Thống kê trực quan điểm báo ngập, số lượng người kẹt, và xu hướng lan rộng
+- Empower residents to submit flood reports and advocate for local improvements.
+- Provide transparent, data-backed visualizations of socio-economic and environmental trade-offs.
 
-### 4. **Hỗ trợ Ưu tiên Định tuyến & Sơ tán (Safe Routing)**
+### 📚 4. Academic Researchers & Students
 
-- Khi đường lớn biến thành sông, AI kích hoạt "Routing Engine" cắt bỏ các node ngập sâu, tính **tuyến đường an toàn nhất** cho xe máy/ô tô
-- **Hướng dẫn sơ tán:** Gợi ý các nhà sinh hoạt cộng đồng/hầm trú ẩn cao ráo gần nhất
-- Cảnh báo trực tiếp cho người dân đang lái xe lại gần khu vực nguy hiểm
-
----
-
-## 📚 Công nghệ Sử dụng
-
-| Thành phần                 | Công nghệ cụ thể       | Vai trò trong hệ thống                                                                                                                      |
-| -------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Giao diện (Frontend)**   | `Leaflet.js`           | Hiển thị bản đồ tương tác, vẽ các lớp phủ dữ liệu như vùng ngập, luồng ngập lụt và các thực thể GIS & Map.                                |
-| **Xử lý Logic (Backend)**  | `Node.js (Express)`    | Đóng vai trò trung tâm điều phối API, quản lý phiên làm việc và kết nối tới cơ sở dữ liệu.                                                  |
-| **Trí tuệ Nhân tạo (AI)**  | `Amazon Bedrock`       | Cung cấp hạ tầng để chạy các mô hình ngôn ngữ lớn và mô hình dự báo, hỗ trợ phân tích kịch bản và tối ưu hóa tài nguyên đô thị.             |
-| **Dữ liệu nền (Database)** | `PostgreSQL + PostGIS` | Lưu trữ và xử lý các dữ liệu không gian phức tạp, thực hiện các phép toán hình học như kiểm tra giao cắt, tạo vùng đệm và tính khoảng cách. |
-| **Kết nối (Real-time)**    | `WebSockets`           | Duy trì kết nối hai chiều liên tục, đảm bảo dữ liệu từ cảm biến IoT được cập nhật lên bản đồ theo thời gian thực.                           |
+- Tap into open datasets for urban hydrology and climate adaptation studies.
+- Simulate complex flood dynamics within a controlled, reproducible environment.
+- Benchmark hypotheses against real-world sensor readings and historical records.
 
 ---
 
-## 🌟 So Sánh AegisFlow AI Với Các Hệ Thống Hiện Tại
+## 🚀 Core Capabilities
 
-| Tiêu chí           | ❌ Các Hệ thống, Bản đồ Hiện tại                       | ✅ AegisFlow AI                                                    |
-| ------------------ | ------------------------------------------------------ | ------------------------------------------------------------------ |
-| Cách tiếp cận      | Chỉ giám sát kẹt xe – hiển thị đường rỗng dù ngập nước | Loại trừ lộ trình – Tự động chặn đường ngập và tìm đường vòng      |
-| Phản ứng           | Thụ động – người dân đi vào vùng nước mới biết ngập    | Chủ động – dự báo và gửi lộ trình tránh ngập từ trước              |
-| Khả năng điều phối | Thiếu hệ thống phân bổ, cứu hộ theo cảm tính           | Đánh giá mức độ tổn thương, tự động phân cực khu vực ưu tiên cao   |
-| Cập nhật dữ liệu   | Rất chậm, chờ báo chí đô thị lên bài                   | Crowdsourcing Realtime + IoT + WebSockets hiển thị ngay lập tức    |
-| Phân tích kịch bản | Không có hoặc rất hạn chế tính toán không gian         | Phân tích điểm trũng, khoanh vùng rủi ro bằng PostgreSQL (PostGIS) |
-| Rủi ro sinh mạng   | Nguy hiểm, nhiều trường hợp xe bị chết máy, mắc kẹt    | An toàn – Đảm bảo người dân tìm được đường về nhà an toàn          |
+![Core Capabilities](/static/img/chucnang.png)
 
----
+### 1. **Live Flood Monitoring Radar**
 
-## 📖 Tài liệu Chính
+- Instantly plots flood coordinates onto an interactive base map in real time.
+- Continuously refreshed through citizen crowdsourcing and IoT water-level sensor feeds.
+- Color-coded flood severity overlays across distinct geographic clusters for at-a-glance situational awareness.
 
-- [Kiến trúc Hệ thống](./Architecture.md) – Tìm hiểu và thiết kế tổng thể
-- [Hướng dẫn Bắt đầu](./GettingStarted.md) – Cài đặt và chạy AegisFlow AI
-- [Cài đặt Chi tiết](./Installation.md) – Hướng dẫn chi tiết cài đặt từng bước
-- [Các Dịch vụ](./Services/README.md) – Tìm hiểu từng microservice
+### 2. **Predictive AI for Flood Risk**
 
----
+- Leverages Machine Learning models to **project which zones face flood risk** in the near-term future.
+- Cross-references live weather API feeds against topographic depression maps to pinpoint vulnerable lowlands.
 
-## 🎯 Kết Luận
+### 3. **Operational Dashboard for Disaster Relief**
 
-AegisFlow AI là giải pháp **Bản đồ GIS + AI Dự báo** toàn diện cho công tác quản lý và ứng phó ngập lụt đô thị. Hệ thống không chỉ cập nhật cảnh báo realtime mà còn có khả năng tìm kiếm tuyến đường sơ tán an toàn, điều phối cứu trợ và bảo vệ tính mạng người dân trong điều kiện thời tiết cực đoan.
+- **Vulnerability Scoring:** Assigns priority rankings to affected areas — zones with hospitals, schools, or elderly populations in deep floodwater are automatically flagged for first response.
+- Renders visual summaries of incoming flood reports, estimated stranded populations, and flood propagation trajectories.
 
-Với công nghệ hiện đại và kiến trúc Microservices, AegisFlow AI mang lại giá trị thực tiễn rõ rệt: giảm thiểu rủi ro sinh mạng, tăng tốc độ phản ứng khẩn cấp và hỗ trợ ra quyết định chặt chẽ.
+### 4. **Smart Routing & Evacuation Navigation (Safe Routing)**
 
-Dự án không chỉ xử lý vấn đề ngập lụt cấp bách của hôm nay mà còn xây dựng một lớp phòng thủ kỹ thuật số vững chắc cho các **đô thị chống chịu (Resilient Cities)** tại Việt Nam trong tương lai.
-
-**AegisFlow AI – Khơi thông dòng chảy, bảo vệ sinh mạng an toàn.**
+- When streets become waterways, the AI engages its routing engine to sever deeply flooded nodes from the graph and calculate the **optimal safe path** for vehicles and pedestrians alike.
+- **Evacuation advisories:** Surfaces the closest elevated shelters and community safe havens.
+- Issues direct mobile alerts to citizens approaching hazardous flood zones.
 
 ---
 
-## 📞 Liên hệ & Đóng góp
+## 🏗️ System Architecture
 
-### Liên hệ Dự án
+### Layered Overview
+
+| Layer | Key Components | What It Does |
+|-------|----------------|-------------|
+| **Client Layer** | `Next.js 15 Web App`, `React Native Mobile App` | Delivers interactive Mapbox-powered dashboards, citizen flood-reporting interfaces, emergency views, and push-based realtime alerts. |
+| **API & Orchestration Layer** | `Laravel 11+ Backend API`, `Queue Worker (Horizon)` | Manages authentication (Sanctum), dynamic role-based access (Spatie Permission), all map/incident/prediction endpoints, event orchestration, and cross-service coordination. |
+| **AI & Simulation Layer** | `Python FastAPI Service`, `LSTM / GNN models` | Executes water-level forecasting, cascading flood-impact propagation analysis (BFS heuristic on graph), what-if urban planning simulations, and recommendation generation. |
+| **Data Layer** | `PostgreSQL 16 + PostGIS 3.4`, `Redis 7` | Persists users, incidents, the full spatial road-network graph (nodes/edges/zones), time-series sensor readings (monthly partitions), application cache, and job queues. |
+| **Messaging & Realtime Layer** | `MQTT (Mosquitto)`, `Kafka`, `Soketi WebSocket` | Receives IoT water-level telemetry via MQTT, pipes event streams between services through Kafka, and pushes live state updates to all connected clients via the Pusher-compatible WebSocket layer. |
+| **External Integrations** | `Mapbox GL JS`, `Firebase FCM`, `OpenWeather API` | Provides base map tiles, geocoding and directions context, push notification delivery to mobile devices, and weather observation data. |
+
+### End-to-End Data Flow
+
+1. **IoT water-level sensors and meteorological feeds** transmit raw flood telemetry into the platform via the MQTT → Kafka → Laravel Consumer pipeline.
+2. **Laravel Backend** validates, deduplicates, and enriches each data packet, computes derived metrics (water_level, speed, flow), writes to PostgreSQL/PostGIS, enqueues background jobs, and broadcasts state transitions through Soketi WebSocket.
+3. **Python AI Service** consumes incident context, current sensor snapshots, and the network graph to run flood-spread predictions (LSTM for temporal water-level curves, GNN for spatial graph propagation), execute planning simulations, and produce actionable recommendations.
+4. **Redis-backed queue workers** handle computationally intensive tasks (AI inference calls, batch notification dispatch) asynchronously, ensuring the real-time monitoring loop remains unblocked.
+5. **Soketi WebSocket** streams map layer updates, incident state changes, flood warnings, and AI-generated recommendations directly to dashboard and mobile clients with sub-second latency.
+6. **Operators, citizens, and emergency responders** all interact with a unified flood map through their respective role-tailored interfaces — enabling synchronized monitoring, coordinated evacuations, and efficient relief distribution.
+
+---
+
+## 📊 Technology Stack
+
+| Component | Technology | Port | Purpose |
+|-----------|-----------|:----:|---------|
+| Frontend | Next.js 15 + Mapbox GL JS | 3000 | Operator & Admin dashboard with interactive flood maps |
+| Mobile | React Native CLI | — | Citizen reporting + Emergency responder app (Phase 2) |
+| Backend | Laravel 11+ (PHP 8.3) | 8000 | REST API, domain events, background job orchestration |
+| AI Service | Python FastAPI | 8001 | Flood prediction engine, impact simulation |
+| Database | PostgreSQL 16 + PostGIS 3.4 | 5432 | Primary datastore with spatial query capabilities |
+| Cache / Queue | Redis 7 | 6379 | Application cache + async job queue broker |
+| Message Broker | Apache Kafka | 9092 | High-throughput IoT data ingestion pipeline |
+| IoT Protocol | Mosquitto (MQTT) | 1883 | Lightweight sensor communication protocol |
+| WebSocket | Soketi | 6001 | Realtime event broadcasting (Pusher-compatible) |
+
+---
+
+## 🌟 AegisFlow AI vs. The Status Quo
+
+| Dimension | ❌ Conventional Maps & Tools | ✅ AegisFlow AI |
+|-----------|------------------------------|-----------------|
+| **Strategy** | Tracks congestion only — displays roads as "clear" even when submerged | Graph-aware exclusion — automatically removes flooded edges and reroutes |
+| **Timing** | Reactive — people discover flooding only after driving into it | Predictive — broadcasts flood-avoidance paths **before** water arrives |
+| **Resource Allocation** | Ad-hoc rescue coordination driven by gut feeling | Algorithmic vulnerability assessment that auto-prioritizes high-risk zones |
+| **Information Latency** | Hours behind — depends on news outlets or manual reporting | Near-instant — IoT + citizen crowdsource + WebSocket push (**< 10s delay**) |
+| **Geospatial Intelligence** | Minimal or nonexistent spatial computation | Full PostGIS spatial queries + graph-based flood propagation modeling |
+| **Citizen Safety** | High risk — stranded vehicles, blocked evacuation paths | Maximized safety — every citizen gets a verified safe route home |
+
+---
+
+## ⚙️ Getting Started
+
+### Option 1: Docker Deployment (Recommended)
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ASEAN-AI-DZ/AegisFlowAI.git
+   cd AegisFlowAI
+   ```
+
+2. **Set up environment variables:**
+   ```bash
+   cp docs/.env.example .env
+   ```
+   Edit `.env` and provide your Mapbox access token:
+   ```
+   MAPBOX_TOKEN=pk.your_real_mapbox_token
+   ```
+
+3. **Build and launch all services:**
+   ```bash
+   docker compose up -d --build
+   ```
+
+4. **Initialize the database:**
+   ```bash
+   docker exec -it aegisflow-laravel php artisan migrate --seed
+   ```
+
+5. **Open the platform:**
+
+   | Service | URL | Description |
+   |---------|-----|-------------|
+   | **Frontend** | http://localhost:3000 | Next.js Dashboard |
+   | **Backend API** | http://localhost:8000/api | Laravel REST API |
+   | **AI Service** | http://localhost:8001/docs | FastAPI Swagger UI |
+   | **WebSocket** | ws://localhost:6001 | Soketi Realtime |
+
+### Option 2: Manual Local Setup
+
+**You will need:**
+- PHP 8.3+, Composer
+- Node.js + Yarn
+- Python 3.11+
+- PostgreSQL 16 with the PostGIS extension
+- Redis
+- (Optional) Kafka, Mosquitto MQTT broker, and Soketi for the full realtime/IoT pipeline
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ASEAN-AI-DZ/AegisFlowAI.git
+   cd AegisFlowAI
+   ```
+
+2. **Provision the database:**
+   ```sql
+   CREATE DATABASE aegisflow;
+   \c aegisflow
+   CREATE EXTENSION IF NOT EXISTS postgis;
+   ```
+
+3. **Launch the backend API:**
+   ```bash
+   cd backend
+   composer install
+   cp .env.example .env
+   ```
+
+   Configure `backend/.env` with your local connection details:
+   ```env
+   DB_CONNECTION=pgsql
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=aegisflow
+   DB_USERNAME=postgres
+   DB_PASSWORD=secret
+   REDIS_CLIENT=predis
+   REDIS_HOST=127.0.0.1
+   AI_SERVICE_URL=http://127.0.0.1:8001
+   ```
+
+   Then bootstrap and serve:
+   ```bash
+   php artisan key:generate
+   php artisan migrate --seed
+   php artisan serve --host=127.0.0.1 --port=8000
+   ```
+
+4. **Start the background job worker** (in a separate terminal):
+   ```bash
+   cd backend
+   php artisan queue:work --queue=high,default --sleep=3 --tries=3
+   ```
+
+5. **Spin up the AI service:**
+   ```bash
+   cd ai-service
+   python -m venv venv
+   source venv/bin/activate       # macOS/Linux
+   # .\venv\Scripts\Activate.ps1  # Windows PowerShell
+   pip install -r requirements.txt
+   cp .env.example .env
+   ```
+
+   Adjust `ai-service/.env` if your database credentials differ:
+   ```env
+   DB_HOST=127.0.0.1
+   DB_PORT=5432
+   DB_DATABASE=aegisflow
+   DB_USERNAME=postgres
+   DB_PASSWORD=secret
+   ```
+
+   Then launch:
+   ```bash
+   uvicorn app.main:app --reload --host 127.0.0.1 --port 8001
+   ```
+
+6. **Start the frontend:**
+   ```bash
+   cd frontend
+   yarn install
+   ```
+
+   Ensure `frontend/.env.local` is configured:
+   ```env
+   NEXT_PUBLIC_API_URL=http://localhost:8000/api
+   NEXT_PUBLIC_MAPBOX_TOKEN=pk.your_mapbox_token
+   NEXT_PUBLIC_WS_HOST=localhost
+   NEXT_PUBLIC_WS_PORT=6001
+   ```
+
+   Then run:
+   ```bash
+   yarn dev
+   ```
+
+**Local service endpoints:**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000/api
+- AI Service: http://localhost:8001
+
+> For database management commands, test instructions, and advanced configuration, see [docs/RUNNING.md](docs/RUNNING.md).
+
+### Demo Credentials
+
+```
+Email:    admin@aegisflow.local
+Password: password
+```
+
+---
+
+## 📞 Contact & Contributing
+
+### Get in Touch
 
 - **GitHub Repository:** https://github.com/ASEAN-AI-DZ/AegisFlowAI
-- **Đóng góp:** Fork repository → tạo feature branch → mở Pull Request
-- **Báo lỗi:** Tạo GitHub Issue với mô tả chi tiết, steps to reproduce
-- **Đề xuất tính năng mới:** Tham gia discussions và cải thiện Model AI
+- **Documentation Portal:** [AegisFlow AI Docs](https://asean-ai-dz.github.io/AegisFlowDocument/)
+
+### How to Contribute
+
+- Fork the repo → create a feature branch → submit a Pull Request.
+- Found a bug? [Open an Issue](https://github.com/ASEAN-AI-DZ/AegisFlowAI/issues) with a clear description and reproduction steps.
+- Have an idea? Join the Discussions tab to propose enhancements or help refine the AI models.
 
 ---
 
-## 📄 Giấy phép
+## 📄 License
 
-Dự án này được phân phối dưới **GNU General Public License v3.0**. Xem file [LICENSE](./License.md) để biết thêm chi tiết.
+This project is released under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for full terms.
 
 ---
 
-_**Được phát triển với ❤️ để hướng tới đô thị an toàn, bền vững**_
+_**Crafted with ❤️ for safe, resilient, and climate-ready cities**_
 
-
+_"AegisFlow AI — Clearing the flow, shielding lives."_
