@@ -2,18 +2,18 @@ name: Generate Changelog
 
 on:
   # Chạy khi push vào main/master/develop (CHANGELOG chính thức)
-  push:
-    branches:
-      - main
-      - master
-      - develop
+  # push:
+  #   branches:
+  #     - main
+  #     - master
+  #     - develop
   
   # Chạy khi tạo Pull Request (preview CHANGELOG)
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches:
-      - main
-      - master
+  # pull_request:
+  #   types: [opened, synchronize, reopened]
+  #   branches:
+  #     - main
+  #     - master
   
   # Cho phép chạy manual
   workflow_dispatch:
