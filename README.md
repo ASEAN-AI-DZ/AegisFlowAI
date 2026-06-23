@@ -188,34 +188,23 @@ The moment a severe storm event begins, the platform doesn't just show you where
 
 ## ⚙️ Getting Started
 
-### Option 1: Docker Deployment (Recommended)
+### Quick Start with Docker (Recommended)
 
-1. **Clone the repository:**
+1. **Clone the repository and set up configuration:**
    ```bash
    git clone https://github.com/ASEAN-AI-DZ/AegisFlowAI.git
    cd AegisFlowAI
-   ```
-
-2. **Set up environment variables:**
-   ```bash
    cp docs/.env.example .env
    ```
-   Edit `.env` and provide your Mapbox access token:
-   ```
-   MAPBOX_TOKEN=pk.your_real_mapbox_token
-   ```
+   *Edit `.env` to add your Mapbox access token (`MAPBOX_TOKEN`).*
 
-3. **Build and launch all services:**
+2. **Launch all services & initialize the database:**
    ```bash
    docker compose up -d --build
-   ```
-
-4. **Initialize the database:**
-   ```bash
    docker exec -it aegisflow-laravel php artisan migrate --seed
    ```
 
-5. **Open the platform:**
+3. **Access the platform services:**
 
    | Service | URL | Description |
    |---------|-----|-------------|
@@ -224,118 +213,15 @@ The moment a severe storm event begins, the platform doesn't just show you where
    | **AI Service** | http://localhost:8001/docs | FastAPI Swagger UI |
    | **WebSocket** | ws://localhost:6001 | Soketi Realtime |
 
-### Option 2: Manual Local Setup
-
-**You will need:**
-- PHP 8.3+, Composer
-- Node.js + Yarn
-- Python 3.11+
-- PostgreSQL 16 with the PostGIS extension
-- Redis
-- (Optional) Kafka, Mosquitto MQTT broker, and Soketi for the full realtime/IoT pipeline
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/ASEAN-AI-DZ/AegisFlowAI.git
-   cd AegisFlowAI
-   ```
-
-2. **Provision the database:**
-   ```sql
-   CREATE DATABASE aegisflow;
-   \c aegisflow
-   CREATE EXTENSION IF NOT EXISTS postgis;
-   ```
-
-3. **Launch the backend API:**
-   ```bash
-   cd backend
-   composer install
-   cp .env.example .env
-   ```
-
-   Configure `backend/.env` with your local connection details:
-   ```env
-   DB_CONNECTION=pgsql
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   DB_DATABASE=aegisflow
-   DB_USERNAME=postgres
-   DB_PASSWORD=secret
-   REDIS_CLIENT=predis
-   REDIS_HOST=127.0.0.1
-   AI_SERVICE_URL=http://127.0.0.1:8001
-   ```
-
-   Then bootstrap and serve:
-   ```bash
-   php artisan key:generate
-   php artisan migrate --seed
-   php artisan serve --host=127.0.0.1 --port=8000
-   ```
-
-4. **Start the background job worker** (in a separate terminal):
-   ```bash
-   cd backend
-   php artisan queue:work --queue=high,default --sleep=3 --tries=3
-   ```
-
-5. **Spin up the AI service:**
-   ```bash
-   cd ai-service
-   python -m venv venv
-   source venv/bin/activate       # macOS/Linux
-   # .\venv\Scripts\Activate.ps1  # Windows PowerShell
-   pip install -r requirements.txt
-   cp .env.example .env
-   ```
-
-   Adjust `ai-service/.env` if your database credentials differ:
-   ```env
-   DB_HOST=127.0.0.1
-   DB_PORT=5432
-   DB_DATABASE=aegisflow
-   DB_USERNAME=postgres
-   DB_PASSWORD=secret
-   ```
-
-   Then launch:
-   ```bash
-   uvicorn app.main:app --reload --host 127.0.0.1 --port 8001
-   ```
-
-6. **Start the frontend:**
-   ```bash
-   cd frontend
-   yarn install
-   ```
-
-   Ensure `frontend/.env.local` is configured:
-   ```env
-   NEXT_PUBLIC_API_URL=http://localhost:8000/api
-   NEXT_PUBLIC_MAPBOX_TOKEN=pk.your_mapbox_token
-   NEXT_PUBLIC_WS_HOST=localhost
-   NEXT_PUBLIC_WS_PORT=6001
-   ```
-
-   Then run:
-   ```bash
-   yarn dev
-   ```
-
-**Local service endpoints:**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000/api
-- AI Service: http://localhost:8001
-
-> For database management commands, test instructions, and advanced configuration, see [docs/RUNNING.md](docs/RUNNING.md).
-
 ### Demo Credentials
-
 ```
 Email:    admin@aegisflow.local
 Password: password
 ```
+
+> 📖 **Looking for a manual local setup?** 
+> For full instructions on setting up each component manually, database administration commands, running test suites, or customizing configuration, please refer to the [Setup & Execution Guide (docs/RUNNING.md)](docs/RUNNING.md).
+
 
 ---
 
