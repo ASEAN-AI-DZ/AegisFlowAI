@@ -134,7 +134,7 @@ The moment a severe storm event begins, the platform doesn't just show you where
 ---
 
 ## 🏗️ System Architecture
-
+![System Architecture](/static/img/Architecture.jpg)
 ### Layered Overview
 
 | Layer | Key Components | What It Does |
